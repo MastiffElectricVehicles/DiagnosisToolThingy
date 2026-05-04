@@ -191,6 +191,9 @@
         <div>
           <button class="btn" id="btnCanID">CanID</button>
         </div>
+        <div>
+          <button class="btn" id="btnCurtisInsHataKodlari">Curtis Ins Hata Kodları</button>
+        </div>
       </div>
 
       <div class="sep"></div>
@@ -1710,6 +1713,7 @@ ERROR_DB[242] = {
     const btnShowZapi = document.getElementById("btnShowZapi");
     const btnShowCurtis = document.getElementById("btnShowCurtis");
     const btnCanID = document.getElementById("btnCanID");
+    const btnCurtisInsHataKodlari = document.getElementById("btnCurtisInsHataKodlari");
     const btnHideSchematic = document.getElementById("btnHideSchematic");
     const schematicViewer = document.getElementById("schematicViewer");
     const schematicImg = document.getElementById("schematicImg");
@@ -1757,6 +1761,14 @@ function showSchematic(kind) {
     if (btnShowMastiffLithium) btnShowMastiffLithium.addEventListener("click", () => showSchematic("mastiff_lithium"));
     if (btnCanID) btnCanID.addEventListener("click", () => {
       window.open("https://drive.google.com/file/d/1-47k5WNGijsPL381GYmkg_u-U7G4s9uU/view?authuser=1", "_blank", "noopener");
+    });
+    if (btnCurtisInsHataKodlari) btnCurtisInsHataKodlari.addEventListener("click", () => {
+      const link = document.createElement("a");
+      link.href = "MAAVOA_DETAYLI.pdf";
+      link.download = "MAAVOA_DETAYLI.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     });
     if (btnHideSchematic) btnHideSchematic.addEventListener("click", hideSchematic);
 
